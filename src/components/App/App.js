@@ -1,13 +1,13 @@
 import React from 'react';
 import PoloniexTicket from '../PoloniexTicket/PoloniexTicket';
 import Course from '../Course/Course';
-import Navigation from '../Navigation/Navigation';
+import PropTypes from 'prop-types';
 
 
 export default class App extends React.Component {
     constructor(props){
         super(props);
-        this.state = {currentLeft: "", currentRight: ""};
+        this.state = {currentLeft: "", currentRight: "", result: ""};
     }
 
   getCurrencyLeft = (e) => {
@@ -28,7 +28,7 @@ export default class App extends React.Component {
         let data = JSON.parse(polo);
 
         if (data[left+"_"+right]){
-            lastCurrency = data[left+"_"+right].last;
+            lastCurrency = 1 / data[left+"_"+right].last;
         } else
         if (data[right+"_"+left]){
             lastCurrency = data[right+"_"+left].last
@@ -36,21 +36,29 @@ export default class App extends React.Component {
             lastCurrency = 'Нет курса обмена';
         }
       }
-      return lastCurrency;
+
+      return lastCurrency.toString();
   };
 
-  componentDidUpdate(prevProps, prevState){
-      this.getResult();
-  }
+  leftInLog = (e) => {
+      let result = parseInt(e.target.value)* this.getResult();
+      console.log(result);
+      // this.setState({result: result});
+      // return result;
+      // console.log(e.target.value)
+  };
 
   render(){
         return (
             <div style={{width:"80%"}}>
-                <div><Navigation/></div>
-                <div style={{float:"left"}}><PoloniexTicket say = {this.getCurrencyLeft} /></div>
-                <div style={{float:"left"}}><PoloniexTicket say = {this.getCurrencyRight} /></div>
-                <div style={{float:"left"}}><Course last = {this.getResult()}/></div>
+                <div style={{float:"left"}}><PoloniexTicket say = {this.getCurrencyLeft} leftIn={this.leftInLog}/></div>
+                <div style={{float:"left"}}><PoloniexTicket say = {this.getCurrencyRight} result={this.state.result}/></div>
+                <div style={{float:"left"}}><Course lastCurrency = {this.getResult()}/></div>
             </div>
         )
     }
 }
+
+Course.propTypes = {
+     currentLeft: PropTypes.string
+};

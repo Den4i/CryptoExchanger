@@ -1,7 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-let Course =  (props) => {
-    return <input value={props.last}/>
+
+class Course extends React.Component {
+
+    render (){
+            return <input value={this.props.lastCurrency} />
+    }
+}
+
+Course.propTypes = {
+     lastCurrency: PropTypes.string
 };
 
 export default Course;

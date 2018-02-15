@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
+import PropTypes from 'prop-types';
 
 let arr = ["BTC", "AMP", "ARDR", "BCH", "BCN", "BCY", "BELA", "BLK", "BTCD", "BTM", "BTS", "BURST", "CLAM", "CVC", "DASH", "DCR", "DGB",
     "DOGE", "EMC2", "ETC", "ETH", "EXP", "FCT", "FLDC", "FLO", "GAME", "GAS", "GNO", "GNT", "GRC", "HUC", "LBC", "LSK", "LTC", "MAID", "NAV",
@@ -11,6 +12,8 @@ export default class PoloniexTicket extends React.Component {
     super(props);
     this.state = {data: [], current: ""};
     this.handleChange = this.handleChange.bind(this);
+
+    this.handleChangeIn = this.handleChangeIn.bind(this);
   }
 
   componentDidMount(){
@@ -27,7 +30,7 @@ export default class PoloniexTicket extends React.Component {
         return true;
     }
     return false;
-  };
+  }
 
   sayCurrent = (e) => {
       this.props.say(e);
@@ -35,17 +38,22 @@ export default class PoloniexTicket extends React.Component {
 
   async fetchData (){
     const response = await fetch('http://127.0.0.1:5000/poloniex');
-    const json = await response.json();
-    this.setState({data: json});
+    const data = await response.json();
+    this.setState({data: data});
 
-    sessionStorage.setItem('poloniex', JSON.stringify(json));
-   };
+    sessionStorage.setItem('poloniex', JSON.stringify(data));
+   }
+
+  handleChangeIn = (e) => {
+      // console.log(e.target.value)
+      this.props.leftIn(e)
+  };
 
   render () {
 
       return (
           <div>
-              <input type="text" name={this.state.current} />
+              <input type="text" name={this.state.current} onChange={this.handleChangeIn} value={this.props.result}/>
               <ul>
                   {
                       arr.map(function (item) {
@@ -69,3 +77,14 @@ class Button1 extends React.Component {
         return <Button onClick={this.handleCurrencyClick} name={this.props.name}>{this.props.name} </Button>
   }
 }
+
+PoloniexTicket.propTypes = {
+    say: PropTypes.func,
+    leftIn: PropTypes.func,
+    result: PropTypes.string
+};
+
+Button1.propTypes = {
+    onGreet: PropTypes.func,
+    name: PropTypes.string
+};
