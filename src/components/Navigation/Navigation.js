@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/lib/Navbar';
 
-const menu = ["Правила обмена", "Партнерам", "Новости", "Контакты", "FAQ"]
+const menu = ["Правила обмена", "Партнерам", "Новости", "Контакты", "FAQ"];
 
 function Navigation() {
     return (
