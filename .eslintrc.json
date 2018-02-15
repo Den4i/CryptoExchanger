@@ -1,0 +1,16 @@
+{
+    "extends": ["google", "plugin:react/recommended"],
+    "parser": "babel-eslint",
+    "rules": {
+        "linebreak-style": ["error", "windows"]
+    },
+    "globals": {
+        "document": true,
+        "window": true,
+        "sessionStorage": true,
+        "fetch": true
+    },
+    "plugins": [
+        "react"
+    ]
+}
