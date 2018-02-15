@@ -8,6 +8,7 @@ app = Flask(__name__, static_folder=assetsPath)
 
 
 @app.route('/')
+@app.route('/rules')
 def index():
     return send_from_directory(assetsPath, "index.html")
 
@@ -22,6 +23,7 @@ def poloniex():
     ticker = my_polo.returnTicker()
 
     return jsonify(ticker)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
