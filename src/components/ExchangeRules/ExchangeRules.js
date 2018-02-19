@@ -1,9 +1,7 @@
 import React from 'react';
 
-class ExchangeRules extends React.Component {
-  render() {
+const ExchangeRules = function (props) {
     return <div>Правила обмена</div>;
-  }
-}
+};
 
 export default ExchangeRules;
