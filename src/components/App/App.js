@@ -42,23 +42,40 @@ export default class App extends React.Component {
 
   leftInLog = (e) => {
       let result = parseInt(e.target.value)* this.getResult();
-      console.log(result);
-      // this.setState({result: result});
-      // return result;
-      // console.log(e.target.value)
+      this.setState({result: ""+result});
   };
 
   render(){
         return (
             <div style={{width:"80%"}}>
-                <div style={{float:"left"}}><PoloniexTicket say = {this.getCurrencyLeft} leftIn={this.leftInLog}/></div>
-                <div style={{float:"left"}}><PoloniexTicket say = {this.getCurrencyRight} result={this.state.result}/></div>
+                <div style={{float:"left"}}>
+                    <Input1 name={this.state.currentLeft} onCount={this.leftInLog} />
+                    <PoloniexTicket say = {this.getCurrencyLeft}/>
+                </div>
+                <div style={{float:"left"}}>
+                    <ResultInput result={this.state.result} />
+                    <PoloniexTicket say = {this.getCurrencyRight} result={this.state.result}/>
+                </div>
                 <div style={{float:"left"}}><Course lastCurrency = {this.getResult()}/></div>
             </div>
         )
     }
 }
 
-Course.propTypes = {
-     currentLeft: PropTypes.string
+const Input1 = function (props) {
+    return <input type="text" name={props.currentLeft} onChange={props.onCount} value={props.result}/>
+};
+
+const ResultInput = function (props) {
+    return <input type="text" value={props.result}/>
+};
+
+Input1.propTypes = {
+  currentLeft: PropTypes.string,
+  onCount: PropTypes.func,
+  result: PropTypes.string
+};
+
+ResultInput.propTypes = {
+  result: PropTypes.string
 };
