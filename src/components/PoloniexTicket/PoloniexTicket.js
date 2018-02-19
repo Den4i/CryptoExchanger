@@ -12,8 +12,6 @@ export default class PoloniexTicket extends React.Component {
     super(props);
     this.state = {data: [], current: ""};
     this.handleChange = this.handleChange.bind(this);
-
-    this.handleChangeIn = this.handleChangeIn.bind(this);
   }
 
   componentDidMount(){
@@ -44,16 +42,10 @@ export default class PoloniexTicket extends React.Component {
     sessionStorage.setItem('poloniex', JSON.stringify(data));
    }
 
-  handleChangeIn = (e) => {
-      // console.log(e.target.value)
-      this.props.leftIn(e)
-  };
-
   render () {
 
       return (
           <div>
-              <input type="text" name={this.state.current} onChange={this.handleChangeIn} value={this.props.result}/>
               <ul>
                   {
                       arr.map(function (item) {
@@ -67,6 +59,7 @@ export default class PoloniexTicket extends React.Component {
       )
   }
 }
+
 
 class Button1 extends React.Component {
   handleCurrencyClick = () => {
