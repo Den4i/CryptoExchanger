@@ -63,11 +63,12 @@ export default class App extends React.Component {
 }
 
 const Input1 = function (props) {
-    return <input type="text" name={props.currentLeft} onChange={props.onCount} value={props.result}/>
+    return <input type="text" name={props.currentLeft} onChange={props.onCount} value={props.result}
+                  className={'form-control'}/>
 };
 
 const ResultInput = function (props) {
-    return <input type="text" value={props.result}/>
+    return <input type="text" value={props.result} className={'form-control'}/>
 };
 
 Input1.propTypes = {

@@ -48,11 +48,7 @@ export default class PoloniexTicket extends React.Component {
           <div>
               <ul>
                   {
-                      arr.map(function (item) {
-                          return (
-                              <li key={item}><Button1 name={item} onGreet={this.handleChange} /></li>
-                          )
-                      }.bind(this))
+                      arr.map((item) => (<li key={item}><Button1 name={item} onGreet={this.handleChange} /></li>))
                   }
               </ul>
           </div>
@@ -67,7 +63,7 @@ class Button1 extends React.Component {
   };
 
   render (){
-        return <Button onClick={this.handleCurrencyClick} name={this.props.name}>{this.props.name} </Button>
+        return <Button onClick={this.handleCurrencyClick} name={this.props.name} className={'btn btn-secondary'}>{this.props.name} </Button>
   }
 }
 
