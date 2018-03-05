@@ -11,16 +11,15 @@ export default class PoloniexTicket extends React.Component {
     constructor(props){
     super(props);
     this.state = {data: [], current: ""};
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount(){
       this.fetchData();
   }
 
-  handleChange(e){
-      this.setState({current:e});
-   }
+  handleChange = (e) => {
+     this.setState({current:e});
+  };
 
   shouldComponentUpdate(nextProps, nextState) {
     if (this.state.current !== nextState.current) {
@@ -43,14 +42,10 @@ export default class PoloniexTicket extends React.Component {
    }
 
   render () {
-
       return (
-          <div>
-              <ul>
-                  {
-                      arr.map((item) => (<li key={item}><Button1 name={item} onGreet={this.handleChange} /></li>))
-                  }
-              </ul>
+          <div className="btn-group-vertical" role="group">
+              {arr.map((item) => (<Button1 key={item} name={item} onGreet={this.handleChange}
+                                           clsName ={this.state.current === item ? 'btn btn-success': 'btn btn-secondary'} />))}
           </div>
       )
   }
@@ -63,7 +58,8 @@ class Button1 extends React.Component {
   };
 
   render (){
-        return <Button onClick={this.handleCurrencyClick} name={this.props.name} className={'btn btn-secondary'}>{this.props.name} </Button>
+        return <button onClick={this.handleCurrencyClick} name={this.props.name} type="button" className={this.props.clsName}>
+            {this.props.name} </button>
   }
 }
 
@@ -75,5 +71,6 @@ PoloniexTicket.propTypes = {
 
 Button1.propTypes = {
     onGreet: PropTypes.func,
-    name: PropTypes.string
+    name: PropTypes.string,
+    clsName: PropTypes.string
 };
