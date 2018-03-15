@@ -8,7 +8,11 @@
         "document": true,
         "window": true,
         "sessionStorage": true,
-        "fetch": true
+        "fetch": true,
+        "global": true,
+        "describe": true,
+        "it": true,
+        "beforeEach": true
     },
     "plugins": [
         "react"
