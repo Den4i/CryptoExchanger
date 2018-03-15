@@ -1,8 +1,11 @@
-li {
-    list-style-type: none;
+div {
+    margin: 2%;
+    text-align: justify ;
 }
 
-div {
-    margin: 1%;
-    align: justify ;
+li {
+  list-style-type:none;
+}
+li:before {
+  content:"\2014\0020";
 }
