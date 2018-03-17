@@ -4,7 +4,7 @@ import Course from '../Course/Course';
 import PropTypes from 'prop-types';
 
 
-export default class App extends React.Component {
+class App extends React.Component {
     constructor(props){
         super(props);
         this.state = {currentLeft: "", currentRight: "", result: ""};
@@ -47,9 +47,9 @@ export default class App extends React.Component {
 
   render(){
         return (
-            <div style={{width:"80%"}}>
+            <div className={"col-12"}>
                 <div style={{float:"left"}}>
-                    <Input1 name={this.state.currentLeft} onCount={this.leftInLog} />
+                    <LeftInput name={this.state.currentLeft} onCount={this.leftInLog} />
                     <PoloniexTicket say = {this.getCurrencyLeft}/>
                 </div>
                 <div style={{float:"left"}}>
@@ -62,16 +62,15 @@ export default class App extends React.Component {
     }
 }
 
-const Input1 = function (props) {
-    return <input type="text" name={props.currentLeft} onChange={props.onCount} value={props.result}
-                  className={'form-control'}/>
+const LeftInput = function (props) {
+    return <input type="number" name={props.currentLeft} onChange={props.onCount} value={props.result} className={'form-control'}/>
 };
 
 const ResultInput = function (props) {
     return <input type="text" value={props.result} className={'form-control'}/>
 };
 
-Input1.propTypes = {
+LeftInput.propTypes = {
   currentLeft: PropTypes.string,
   onCount: PropTypes.func,
   result: PropTypes.string
@@ -80,3 +79,5 @@ Input1.propTypes = {
 ResultInput.propTypes = {
   result: PropTypes.string
 };
+
+export { App, LeftInput, ResultInput, PoloniexTicket, Course };
