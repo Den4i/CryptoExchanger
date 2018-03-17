@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './bootstrap.css';
 import './styles.css'
 
-import App from './components/App/App';
+import { App } from './components/App/App';
 import ExchangeRules from './components/ExchangeRules/ExchangeRules';
 import Navigation from './components/Navigation/Navigation';
 import NotFound from './components/NotFound/NotFound';

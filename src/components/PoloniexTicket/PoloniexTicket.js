@@ -42,10 +42,11 @@ export default class PoloniexTicket extends React.Component {
    }
 
   render () {
+      const buttonList = arr.map((item) => (<Button1 key={item} name={item} onGreet={this.handleChange}
+                                           clsName ={this.state.current === item ? 'btn btn-success': 'btn btn-secondary'} />));
       return (
           <div className="btn-group-vertical" role="group">
-              {arr.map((item) => (<Button1 key={item} name={item} onGreet={this.handleChange}
-                                           clsName ={this.state.current === item ? 'btn btn-success': 'btn btn-secondary'} />))}
+              { buttonList }
           </div>
       )
   }
