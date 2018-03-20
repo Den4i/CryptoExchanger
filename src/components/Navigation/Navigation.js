@@ -1,6 +1,14 @@
 import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/lib/Navbar';
-import {Link} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
+
+import { App } from '../App/App';
+import ExchangeRules from '../ExchangeRules/ExchangeRules';
+import NotFound from '../NotFound/NotFound';
+import Partners from '../Partners/Partners';
+import News from '../News/News';
+import Contacts from '../Contacts/Contacts';
+import FAQ from '../FAQ/FAQ';
 
 const menu = [
         {id:1, name: "Главная", path: "/"},
@@ -11,7 +19,7 @@ const menu = [
         {id:6, name:"FAQ", path: "/faq"}
     ];
 
-class Navigation extends Component {
+class Nav extends Component {
     render (){
         return (
             <div>
@@ -31,5 +39,26 @@ class Navigation extends Component {
         )
     }
 }
+
+
+class Navigation extends Component {
+    render() {
+        return (
+                <div>
+                    <Nav/>
+                    <Switch>
+                        <Route exact path={'/'} component={App}/>
+                        <Route path={'/rules'} component={ExchangeRules}/>
+                        <Route path={'/partners'} component={Partners}/>
+                        <Route path={'/news'} component={News}/>
+                        <Route path={'/contacts'} component={Contacts}/>
+                        <Route path={'/faq'} component={FAQ}/>
+                        <Route component={NotFound}/>
+                    </Switch>
+                </div>
+        )
+    }
+}
+
 
 export default Navigation;
