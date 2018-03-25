@@ -10,6 +10,8 @@ import News from '../News/News';
 import Contacts from '../Contacts/Contacts';
 import FAQ from '../FAQ/FAQ';
 
+import Registration from '../Registration/Registration';
+
 const menu = [
         {id:1, name: "Главная", path: "/"},
         {id:2, name: "Правила обмена", path: "/rules"},
@@ -53,6 +55,7 @@ class Navigation extends Component {
                         <Route path={'/news'} component={News}/>
                         <Route path={'/contacts'} component={Contacts}/>
                         <Route path={'/faq'} component={FAQ}/>
+                        <Route path={'/registration'} component={Registration}/>
                         <Route component={NotFound}/>
                     </Switch>
                 </div>
