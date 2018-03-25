@@ -1,6 +1,7 @@
 from flask import Flask, send_from_directory, jsonify
 from os import path
 from project.poloniex_api import Poloniex
+from flask_cors import cross_origin
 
 assetsPath = path.join(path.abspath(path.dirname("../public/assets/")))
 
@@ -14,6 +15,7 @@ def index():
 
 
 @app.route('/poloniex')
+@cross_origin()
 def poloniex():
     my_polo = Poloniex(
         API_KEY='',
