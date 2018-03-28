@@ -1,10 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-let arr = ["BTC", "AMP", "ARDR", "BCH", "BCN", "BCY", "BELA", "BLK", "BTCD", "BTM", "BTS", "BURST", "CLAM", "CVC", "DASH", "DCR", "DGB",
-    "DOGE", "EMC2", "ETC", "ETH", "EXP", "FCT", "FLDC", "FLO", "GAME", "GAS", "GNO", "GNT", "GRC", "HUC", "LBC", "LSK", "LTC", "MAID", "NAV",
-    "NEOS", "NMC", "NXC", "NXT", "OMG", "OMNI", "PASC", "PINK", "POT", "PPC", "RADS", "REP", "RIC", "SBD", "SC", "STEEM", "STORJ", "STR",
-    "STRAT", "SYS", "VIA", "VRC", "VTC", "XBC", "XCP", "XEM", "XMR", "XPM", "XRP", "XVC", "ZEC", "ZRX", "USDT"];
+import { cryptList } from '../../tmpDefines';
 
 
 export default class PoloniexTicket extends React.Component {
@@ -42,7 +38,7 @@ export default class PoloniexTicket extends React.Component {
    }
 
   render () {
-      const buttonList = arr.map((item) => (<Button1 key={item} name={item} onGreet={this.handleChange}
+      const buttonList = cryptList.map((item) => (<Button1 key={item} name={item} onGreet={this.handleChange}
                                            clsName ={this.state.current === item ? 'btn btn-success': 'btn btn-secondary'} />));
       return (
           <div className="btn-group-vertical" role="group">
