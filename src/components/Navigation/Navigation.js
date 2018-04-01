@@ -15,17 +15,16 @@ import { menu } from '../../tmpDefines'
 
 class Nav extends Component {
     render (){
+        let menuList =   menu.map((nav) =>
+                                <Navbar.Brand key={nav.id} className={'menu btn btn-primary'}>
+                                    <Link to={nav.path} className={'btn btn-link'}>{nav.name}</Link>
+                                </Navbar.Brand>
+                             );
         return (
             <div>
                 <Navbar>
                     <Navbar.Header>
-                         {
-                             menu.map((nav) =>
-                                <Navbar.Brand key={nav.id} className={'menu btn btn-primary'}>
-                                    <Link to={nav.path} className={'btn btn-link'}>{nav.name}</Link>
-                                </Navbar.Brand>
-                             )
-                         }
+                         { menuList }
                     </Navbar.Header>
                 </Navbar>
             </div>

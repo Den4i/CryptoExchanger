@@ -6,7 +6,7 @@ class NewsList extends Component {
     render(){
         let object_list = news.map((item) => (
             <div className={"jumbotron"} key={ item.id }>
-              <h1 className={"display-5"}> { item.title } </h1>
+              <h2> { item.title } </h2>
               <p className={"lead"}> { item.short } </p>
               <p className={"lead"}>
                 <a className={"btn btn-primary btn-lg"} href={"/news/"+item.id} role="button">Читать подробнее</a>
@@ -26,7 +26,13 @@ class NewsList extends Component {
 class News extends Component{
     render(){
         const NewsId = this.props.match.params.id;
-        return <h2>Товар № { NewsId }</h2>;
+        let content;
+        for (let i of news) {
+            if (""+i.id === NewsId){
+                content = i.content;
+            }
+        }
+        return <div> { content }</div>;
     }
 }
 

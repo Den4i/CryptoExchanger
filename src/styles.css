@@ -9,3 +9,16 @@ li {
 li:before {
   content:"\2014\0020";
 }
+
+.contactsInfo_columns {
+    grid-column: span 1;
+}
+
+.contactsInfo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 50em)) ;
+}
+
+.contacts {
+    font-size: 25px;
+}
