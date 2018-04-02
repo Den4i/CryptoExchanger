@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Course = function (props) {
+const Course = (props) => {
     return <input type="text" value={props.lastCurrency} className={'form-control'}/>
 };
 

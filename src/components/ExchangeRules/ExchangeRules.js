@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExchangeRules = function () {
+const ExchangeRules = () => {
     return (
         <div><h3>Соглашение о предоставлении услуг сервисом CryptoExchanger</h3>
 

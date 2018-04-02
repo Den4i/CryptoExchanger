@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 
-export default class Partners extends Component {
-    render(){
+const Partners = () => {
         return (
             <div><h3>Партнерам</h3>
 
@@ -66,5 +65,6 @@ export default class Partners extends Component {
 <button className={"btn btn-info"}><Link to={'/registration'} className={'btn btn-link'}>Зарегистрироваться как партнер</Link></button>
             </div>
         )
-    }
-}
+};
+
+export default Partners;

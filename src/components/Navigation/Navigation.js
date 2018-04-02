@@ -13,46 +13,41 @@ import Registration from '../Registration/Registration';
 import { menu } from '../../tmpDefines'
 
 
-class Nav extends Component {
-    render (){
-        let menuList =   menu.map((nav) =>
+const Nav = () => {
+    let menuList = menu.map((nav) =>
                                 <Navbar.Brand key={nav.id} className={'menu btn btn-primary'}>
                                     <Link to={nav.path} className={'btn btn-link'}>{nav.name}</Link>
                                 </Navbar.Brand>
                              );
-        return (
-            <div>
-                <Navbar>
-                    <Navbar.Header>
-                         { menuList }
-                    </Navbar.Header>
-                </Navbar>
-            </div>
-        )
-    }
-}
+    return (
+        <div>
+            <Navbar>
+                <Navbar.Header>
+                    { menuList }
+                </Navbar.Header>
+            </Navbar>
+        </div>
+    )
+};
 
 
-class Navigation extends Component {
-    render() {
-        return (
-                <div>
-                    <Nav/>
-                    <Switch>
-                        <Route exact path={'/'} component={App}/>
-                        <Route path={'/rules'} component={ExchangeRules}/>
-                        <Route path={'/partners'} component={Partners}/>
-                        <Route exact path={'/news'} component={NewsList}/>
-                        <Route path={'/news/:id'} component={News}/>
-                        <Route path={'/contacts'} component={Contacts}/>
-                        <Route path={'/faq'} component={FAQ}/>
-                        <Route path={'/registration'} component={Registration}/>
-                        <Route component={NotFound}/>
-                    </Switch>
-                </div>
-        )
-    }
-}
-
+const Navigation = () => {
+    return (
+        <div>
+            <Nav/>
+            <Switch>
+                <Route exact path={'/'} component={App}/>
+                <Route path={'/rules'} component={ExchangeRules}/>
+                <Route path={'/partners'} component={Partners}/>
+                <Route exact path={'/news'} component={NewsList}/>
+                <Route path={'/news/:id'} component={News}/>
+                <Route path={'/contacts'} component={Contacts}/>
+                <Route path={'/faq'} component={FAQ}/>
+                <Route path={'/registration'} component={Registration}/>
+                <Route component={NotFound}/>
+            </Switch>
+        </div>
+    )
+};
 
 export default Navigation;
