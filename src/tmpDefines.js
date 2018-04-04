@@ -14,7 +14,8 @@ let cryptList = ["BTC", "AMP", "ARDR", "BCH", "BCN", "BCY", "BELA", "BLK", "BTCD
     "NEOS", "NMC", "NXC", "NXT", "OMG", "OMNI", "PASC", "PINK", "POT", "PPC", "RADS", "REP", "RIC", "SBD", "SC", "STEEM", "STORJ", "STR",
     "STRAT", "SYS", "VIA", "VRC", "VTC", "XBC", "XCP", "XEM", "XMR", "XPM", "XRP", "XVC", "ZEC", "ZRX", "USDT"];
 
-let news = [{id: 1,
+let news = [
+            {id: 1,
             publish: new Date(),
             title: "Мартовское обновление!",
             short: "Доброго времени суток, друзья. Рады представить вам несколько небольших обновлений.",
@@ -51,5 +52,35 @@ let news = [{id: 1,
             content: (<div>Доброго</div>)
             }
     ];
+   
+let faqList = [
+            {id: 1,
+            publish: new Date(),
+            title: "Какая минимальная сумма обмена?",
+            content: (<div>
+                <ul>Минимальные суммы обмена следующие (они зависят от выбора валюты, которую Вы обмениваете):
+                    <li>Рубли: 2500</li>
+                    <li>Доллары: 35</li>
+                    <li>Тенге: 14 300</li>
+                    <li>Баты: 1400</li>
+                    <li>Bitcoin: 0.0032</li>
+                    <li>Litecoin: 0.2</li>
+                    <li>Dash: 0.043</li>
+                    <li>Ethereum: 0.039</li>
+                    <li>Ethereum Classic 1.5</li>
+                    <li>Ripple: 25</li>
+                    <li>Monero: 0.13</li>
+                    <li>ZCash: 0.074</li>
+                </ul>
 
-export { menu, cryptList, news }
+                <ul>Исключения, при которых нужно ориентироваться на столбик "Получаю":
+                <li>Bitcoin - 0.007</li>
+                <li>Ethereum - 0.03</li>
+                <li>Monero - 0.3</li>
+                <li>Ripple - 20</li>
+                </ul>
+            </div>)
+        }
+    ];
+
+export { menu, cryptList, news, faqList }
