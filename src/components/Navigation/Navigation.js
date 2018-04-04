@@ -8,7 +8,7 @@ import NotFound from '../NotFound/NotFound';
 import Partners from '../Partners/Partners';
 import { NewsList, News } from '../News/News';
 import Contacts from '../Contacts/Contacts';
-import FAQ from '../FAQ/FAQ';
+import { FAQ, Question } from '../FAQ/FAQ';
 import Registration from '../Registration/Registration';
 import { menu } from '../../tmpDefines'
 
@@ -42,7 +42,8 @@ const Navigation = () => {
                 <Route exact path={'/news'} component={NewsList}/>
                 <Route path={'/news/:id'} component={News}/>
                 <Route path={'/contacts'} component={Contacts}/>
-                <Route path={'/faq'} component={FAQ}/>
+                <Route exact path={'/faq'} component={FAQ}/>
+                <Route path={'/faq/:id'} component={Question}/>
                 <Route path={'/registration'} component={Registration}/>
                 <Route component={NotFound}/>
             </Switch>
