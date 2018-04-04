@@ -17,9 +17,8 @@ const NewsList = () => {
     return <div>{ object_list }</div>
 };
 
-
-const News = () => {
-    const NewsId = this.props.match.params.id;
+const News = (props) => {
+    const NewsId = props.match.params.id;
     let content;
     for (let i of news) {
         if (""+i.id === NewsId){
@@ -37,4 +36,4 @@ News.propTypes = {
   })
 };
 
-export { NewsList, News }
+export { NewsList, News };
