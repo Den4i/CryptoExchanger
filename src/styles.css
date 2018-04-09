@@ -4,10 +4,10 @@ div, h1 {
 }
 
 li {
-  list-style-type:none;
+    list-style-type:none;
 }
 li:before {
-  content:"\2014\0020";
+    content:"\2014\0020";
 }
 
 .contactsInfo_columns {
@@ -21,4 +21,17 @@ li:before {
 
 .contacts {
     font-size: 25px;
+}
+
+.calc {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 50em)) ;
+}
+
+.calc_columns {
+    grid-column: span 1;
+}
+
+.dataEntry {
+    margin: 10px;
 }
