@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Course = (props) => {
-    return <input type="text" value={props.lastCurrency} className={'form-control'}/>
+    return <div>Курс обмена: 1  = {props.lastCurrency}</div>;
 };
 
 Course.propTypes = {
-     lastCurrency: PropTypes.string
+    lastCurrency: PropTypes.string,
 };
 
 export default Course;
