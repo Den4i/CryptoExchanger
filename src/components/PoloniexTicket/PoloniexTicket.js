@@ -1,20 +1,17 @@
+/* eslint-disable require-jsdoc,no-invalid-this */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cryptList } from '../../tmpDefines';
+import CryptList from '../CryptList/CryptList';
 
 
 export default class PoloniexTicket extends React.Component {
-    constructor(props){
+    constructor(props) {
     super(props);
-    this.state = {data: [], current: ""};
-  }
-
-  componentDidMount(){
-      this.fetchData();
+    this.state = {current: ''};
   }
 
   handleChange = (e) => {
-     this.setState({current:e});
+     this.setState({current: e});
   };
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -29,45 +26,17 @@ export default class PoloniexTicket extends React.Component {
       this.props.say(e);
   };
 
-  async fetchData (){
-    const response = await fetch('http://127.0.0.1:5000/poloniex');
-    const data = await response.json();
-    this.setState({data: data});
 
-    sessionStorage.setItem('poloniex', JSON.stringify(data));
+   render() {
+        const handleChange = this.handleChange;
+        const current = this.state.current;
+        return <CryptList handleChange={handleChange} current={current}/>;
    }
-
-  render () {
-      const buttonList = cryptList.map((item) => (<Button1 key={item} name={item} onGreet={this.handleChange}
-                                           clsName ={this.state.current === item ? 'btn btn-success': 'btn btn-secondary'} />));
-      return (
-          <div className="btn-group-vertical" role="group">
-              { buttonList }
-          </div>
-      )
-  }
 }
 
-
-class Button1 extends React.Component {
-  handleCurrencyClick = () => {
-        this.props.onGreet(this.props.name);
-  };
-
-  render (){
-        return <button onClick={this.handleCurrencyClick} name={this.props.name} type="button" className={this.props.clsName}>
-            {this.props.name} </button>
-  }
-}
 
 PoloniexTicket.propTypes = {
     say: PropTypes.func,
     leftIn: PropTypes.func,
-    result: PropTypes.string
-};
-
-Button1.propTypes = {
-    onGreet: PropTypes.func,
-    name: PropTypes.string,
-    clsName: PropTypes.string
+    result: PropTypes.string,
 };
