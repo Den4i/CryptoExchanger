@@ -1,24 +1,26 @@
+/* eslint-disable max-len,react/no-unescaped-entities */
 import React from 'react';
 
 let menu = [
-        {id:1, name: "Главная", path: "/"},
-        {id:2, name: "Правила обмена", path: "/rules"},
-        {id:3, name: "Партнерам", path: "/partners"},
-        {id:4, name: "Новости", path: "/news"},
-        {id:5, name: "Контакты", path: "/contacts"},
-        {id:6, name: "FAQ", path: "/faq"}
+        {id: 1, name: 'Главная', path: '/'},
+        {id: 2, name: 'Правила обмена', path: '/rules'},
+        {id: 3, name: 'Партнерам', path: '/partners'},
+        {id: 4, name: 'Новости', path: '/news'},
+        {id: 5, name: 'Контакты', path: '/contacts'},
+        {id: 6, name: 'FAQ', path: '/faq'},
     ];
 
-let cryptList = ["BTC", "AMP", "ARDR", "BCH", "BCN", "BCY", "BELA", "BLK", "BTCD", "BTM", "BTS", "BURST", "CLAM", "CVC", "DASH", "DCR", "DGB",
-    "DOGE", "EMC2", "ETC", "ETH", "EXP", "FCT", "FLDC", "FLO", "GAME", "GAS", "GNO", "GNT", "GRC", "HUC", "LBC", "LSK", "LTC", "MAID", "NAV",
-    "NEOS", "NMC", "NXC", "NXT", "OMG", "OMNI", "PASC", "PINK", "POT", "PPC", "RADS", "REP", "RIC", "SBD", "SC", "STEEM", "STORJ", "STR",
-    "STRAT", "SYS", "VIA", "VRC", "VTC", "XBC", "XCP", "XEM", "XMR", "XPM", "XRP", "XVC", "ZEC", "ZRX", "USDT"];
+let cryptListArray = ['BTC', 'AMP', 'ARDR', 'BCH', 'BCN', 'BCY', 'BELA', 'BLK', 'BTCD', 'BTM', 'BTS', 'BURST', 'CLAM',
+    'CVC', 'DASH', 'DCR', 'DGB', 'DOGE', 'EMC2', 'ETC', 'ETH', 'EXP', 'FCT', 'FLDC', 'FLO', 'GAME', 'GAS', 'GNO', 'GNT',
+    'GRC', 'HUC', 'LBC', 'LSK', 'LTC', 'MAID', 'NAV', 'NEOS', 'NMC', 'NXC', 'NXT', 'OMG', 'OMNI', 'PASC', 'PINK', 'POT',
+    'PPC', 'RADS', 'REP', 'RIC', 'SBD', 'SC', 'STEEM', 'STORJ', 'STR', 'STRAT', 'SYS', 'VIA', 'VRC', 'VTC', 'XBC',
+    'XCP', 'XEM', 'XMR', 'XPM', 'XRP', 'XVC', 'ZEC', 'ZRX', 'USDT'];
 
 let news = [
             {id: 1,
             publish: new Date(),
-            title: "Мартовское обновление!",
-            short: "Доброго времени суток, друзья. Рады представить вам несколько небольших обновлений.",
+            title: 'Мартовское обновление!',
+            short: 'Доброго времени суток, друзья. Рады представить вам несколько небольших обновлений.',
             content: (<div>Доброго времени суток, друзья. Рады представить вам несколько небольших обновлений. <br/>
             <h6>1. Изменение минимальных сумм обмена на некоторых направлениях для оптимизации работы нашего сервиса.</h6>
             <p>Теперь, при обмене рублей на BTC, платёж должен быть не менее 500RUR, долларов на BTC — не менее 10$, тенге на BTC —
@@ -44,19 +46,19 @@ let news = [
             <p>А если у вас возникнут вопросы, то наши дружелюбные операторы в чате всегда с радостью вам помогут. Также рекомендуем
             подписаться на нашу официальную страницу VK. Там вы всегда будете в курсе свежих новостей, акций и розыгрышей. А ещё мы
             переодически радуем наших подписчиков приятными подарками</p>
-            </div>)
-        }, { id: 2,
+            </div>),
+        }, {id: 2,
             publish: new Date(),
-            title: "test2!",
-            short: "shorrt",
-            content: (<div>Доброго</div>)
-            }
+            title: 'test2!',
+            short: 'shorrt',
+            content: (<div>Доброго</div>),
+            },
     ];
-   
+
 let faqList = [
             {id: 1,
             publish: new Date(),
-            title: "Какая минимальная сумма обмена?",
+            title: 'Какая минимальная сумма обмена?',
             content: (<div>
                 <ul>Минимальные суммы обмена следующие (они зависят от выбора валюты, которую Вы обмениваете):
                     <li>Рубли: 2500</li>
@@ -79,8 +81,8 @@ let faqList = [
                 <li>Monero - 0.3</li>
                 <li>Ripple - 20</li>
                 </ul>
-            </div>)
-        }
+            </div>),
+        },
     ];
 
-export { menu, cryptList, news, faqList }
+export {menu, cryptListArray, news, faqList};
