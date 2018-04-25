@@ -1,0 +1,12 @@
+export const DATA_FETCHED = 'DATA_FETCHED';
+
+export const GET_CURRENT_LEFT = 'GET_CURRENT_LEFT';
+
+export const GET_CURRENT_RIGHT = 'GET_CURRENT_RIGHT';
+
+export const GET_LAST_CURRENCY = 'GET_LAST_CURRENCY';
+
+export const SET_COUNT = 'SET_COUNT';
+
+export const GET_TOTAL_COST = 'GET_TOTAL_COST';
+
