@@ -85,4 +85,69 @@ let faqList = [
         },
     ];
 
-export {menu, cryptListArray, news, faqList};
+let test = {
+    "BTC_AMP": {
+        "baseVolume": "13.20608621",
+        "high24hr": "0.00003566",
+        "highestBid": "0.00003490",
+        "id": 160,
+        "isFrozen": "0",
+        "last": "0.00003495",
+        "low24hr": "0.00003406",
+        "lowestAsk": "0.00003495",
+        "percentChange": "-0.02347024",
+        "quoteVolume": "378817.63132197"
+    },
+    "BTC_ARDR": {
+        "baseVolume": "28.93677587",
+        "high24hr": "0.00004229",
+        "highestBid": "0.00004047",
+        "id": 177,
+        "isFrozen": "0",
+        "last": "0.00004047",
+        "low24hr": "0.00003831",
+        "lowestAsk": "0.00004058",
+        "percentChange": "0.03530314",
+        "quoteVolume": "713697.73642480"
+    },
+    "BTC_BCH": {
+        "baseVolume": "134.56477822",
+        "high24hr": "0.09687999",
+        "highestBid": "0.09611920",
+        "id": 189,
+        "isFrozen": "0",
+        "last": "0.09611027",
+        "low24hr": "0.09454501",
+        "lowestAsk": "0.09611929",
+        "percentChange": "0.01433093",
+        "quoteVolume": "1405.74183184"
+    },
+    "BTC_BCN": {
+        "baseVolume": "120.97046095",
+        "high24hr": "0.00000055",
+        "highestBid": "0.00000051",
+        "id": 7,
+        "isFrozen": "0",
+        "last": "0.00000052",
+        "low24hr": "0.00000047",
+        "lowestAsk": "0.00000052",
+        "percentChange": "0.08333333",
+        "quoteVolume": "237459476.89890772"
+    },
+    "BTC_BCY": {
+        "baseVolume": "5.04733174",
+        "high24hr": "0.00004861",
+        "highestBid": "0.00004603",
+        "id": 151,
+        "isFrozen": "0",
+        "last": "0.00004603",
+        "low24hr": "0.00004492",
+        "lowestAsk": "0.00004613",
+        "percentChange": "0.01633914",
+        "quoteVolume": "109386.07207315"
+    },
+};
+
+
+export {menu, cryptListArray, news, faqList, test};
+
