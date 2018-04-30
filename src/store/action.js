@@ -37,7 +37,7 @@ export function getlastCurrency() {
                     lastCurrency = 1 / data[left + '_' + right].last;
                 }
             }
-
+            console.log(getState());
             dispatch({
                 type: 'GET_LAST_CURRENCY',
                 lastCurrency: lastCurrency.toString(),
@@ -47,18 +47,3 @@ export function getlastCurrency() {
         }
     };
 }
-
-export function getTotalCost() {
-    return (dispatch, getState) => {
-        let state = getState();
-        let count = state.count;
-        let lastCurrency = state.lastCurrency;
-        let result = count*lastCurrency !== 0 ? (count*lastCurrency).toString(): ' ';
-
-        dispatch({
-            type: 'GET_TOTAL_COST',
-            result: result,
-        });
-    };
-}
-

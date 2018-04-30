@@ -6,8 +6,8 @@ import DataEntry from '../DataEntry/DataEntry';
 
 import {connect} from 'react-redux';
 
-import {getData, getLeft, getRight, getLast, getCount, getResult} from '../../store/reducer';
-import {fetchData, getlastCurrency, getTotalCost} from '../../store/action';
+import {getData, getLeft, getRight, getLast, getCount} from '../../store/reducer';
+import {fetchData, getlastCurrency} from '../../store/action';
 
 
 class App extends React.Component {
@@ -40,24 +40,30 @@ class App extends React.Component {
 
 
     componentWillReceiveProps(nextProps) {
-        if (this.props.currentLeft !== nextProps.currentLeft || this.props.currentRight !== nextProps.currentRight || this.props.count !== nextProps.count) {
+        let {currentLeft, currentRight, count} = this.props;
+
+        if (currentLeft !== nextProps.currentLeft || currentRight !== nextProps.currentRight ||
+            count !== nextProps.count) {
             this.props.dispatch(getlastCurrency());
-            this.props.dispatch(getTotalCost());
         }
     }
 
     render() {
+        let {count, lastCurrency} = this.props;
+
+        let result = count*lastCurrency !== 0 ? (count*lastCurrency).toString(): ' ';
+
         return (
             <div className={'calc'}>
                 <div className={'calc_columns'}>
-                      <LeftInput onCount={this.setCount}/>
+                    <LeftInput onCount={this.setCount}/>
                     <PoloniexTicket say={this.getCurrencyLeft}/>
                 </div>
                 <div className={'calc_columns'}>
-                     <ResultInput result={this.props.result} />
+                    <ResultInput result={result}/>
                     <PoloniexTicket say={this.getCurrencyRight}/>
                 </div>
-                <div className={'calc_columns'}><DataEntry lastCurrency = {this.props.lastCurrency} /></div>
+                <div className={'calc_columns'}><DataEntry lastCurrency = {lastCurrency} /></div>
             </div>
         );
     }
@@ -71,7 +77,6 @@ function mapStateToProps(state) {
         currentRight: getRight(state),
         lastCurrency: getLast(state),
         count: getCount(state),
-        result: getResult(state),
     };
 }
 
@@ -80,7 +85,7 @@ const LeftInput = function(props) {
 };
 
 const ResultInput = function(props) {
-    return <input type="text" value={props.result} className={'form-control'}/>;
+    return <input type="text" value={props.result} className={'form-control'} readOnly/>;
 };
 
 LeftInput.propTypes = {

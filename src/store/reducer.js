@@ -8,7 +8,6 @@ const initialState = Immutable({
     currentRight: '',
     lastCurrency: '',
     count: '',
-    result: '',
     location: '',
 });
 
@@ -35,12 +34,6 @@ export default function reduce(state = initialState, action = {}) {
                 count: action.count,
             });
 
-        case types.GET_TOTAL_COST:
-            return state.merge({
-                result: action.result,
-            });
-
-
         default:
             return state;
     }
@@ -66,8 +59,3 @@ export function getLast(state) {
 export function getCount(state) {
     return state.count;
 }
-
-export function getResult(state) {
-    return state.result;
-}
-
