@@ -1,34 +1,17 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import {Link, Route, Switch, BrowserRouter} from 'react-router-dom';
+import {Route, Switch, BrowserRouter} from 'react-router-dom';
 
 import App from '../App/App';
 import ExchangeRules from '../ExchangeRules/ExchangeRules';
 import NotFound from '../NotFound/NotFound';
 import Partners from '../Partners/Partners';
-import {NewsList, News} from '../News/News';
+import News from '../News/News';
+import NewsList from '../NewsList/NewsList';
 import Contacts from '../Contacts/Contacts';
-import {FAQ, Question} from '../FAQ/FAQ';
+import FAQ from '../FAQ/FAQ';
+import Question from '../Question/Question';
 import Registration from '../Registration/Registration';
-import {menu} from '../../tmpDefines';
-
-
-const Nav = () => {
-    let menuList = menu.map((nav) =>
-                                <Navbar.Brand key={nav.id} className={'menu btn btn-primary'}>
-                                    <Link to={nav.path} className={'btn btn-link'}>{nav.name}</Link>
-                                </Navbar.Brand>
-                             );
-    return (
-        <div>
-            <Navbar>
-                <Navbar.Header>
-                    { menuList }
-                </Navbar.Header>
-            </Navbar>
-        </div>
-    );
-};
+import Nav from '../Nav/Nav';
 
 
 const Navigation = () => {
