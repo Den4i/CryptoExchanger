@@ -50,7 +50,6 @@ class App extends React.Component {
 
     render() {
         let {count, lastCurrency} = this.props;
-
         let result = count*lastCurrency !== 0 ? (count*lastCurrency).toString(): ' ';
 
         return (
@@ -96,6 +95,13 @@ LeftInput.propTypes = {
 
 ResultInput.propTypes = {
     result: PropTypes.string,
+};
+
+App.propTypes = {
+    currentLeft: PropTypes.string,
+    currentRight: PropTypes.string,
+    count: PropTypes.string,
+    lastCurrency: PropTypes.string,
 };
 
 

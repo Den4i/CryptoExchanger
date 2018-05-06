@@ -7,11 +7,11 @@ import {cryptListArray} from '../../tmpDefines';
 class CryptList extends React.Component {
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);
     }
-    handleChange(e) {
+
+    handleChange = (e) => {
         this.props.handleChange(e.target.name);
-    }
+    };
 
     render() {
         const buttonList = cryptListArray.map((item) => (<button key={item} name={item} onClick={this.handleChange}
